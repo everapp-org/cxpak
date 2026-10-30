@@ -37,8 +37,7 @@ fn sym(name: &str, kind: SymbolKind, visibility: Visibility) -> Symbol {
 
 fn clojure_index() -> CodebaseIndex {
     let counter = TokenCounter::new();
-    let version_src =
-        "(ns ui.version)\n\n(defn server-build-id []\n  (str \"v\" 1))\n";
+    let version_src = "(ns ui.version)\n\n(defn server-build-id []\n  (str \"v\" 1))\n";
     let attach_src = "(ns ui.attach\n  (:require [ui.version :as version]))\n\n(defn mount []\n  (version/server-build-id))\n";
 
     let files = vec![
